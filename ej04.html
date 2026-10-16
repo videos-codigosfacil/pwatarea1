@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de contacto</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px 15px;
+            font-family: Arial, sans-serif;
+            background: #0c1020;
+            color: #f4f5ff;
+        }
+        form {
+            max-width: 500px;
+            margin: auto;
+            padding: 30px;
+            background: #151b30;
+            border-radius: 18px;
+        }
+        h1 { color: #a78bfa; }
+        label { display: block; margin-top: 18px; }
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px;
+            margin-top: 7px;
+            border: 1px solid #424b68;
+            border-radius: 8px;
+            background: #0c1020;
+            color: white;
+        }
+        button {
+            margin-top: 22px;
+            padding: 12px 20px;
+            border: 0;
+            border-radius: 8px;
+            background: #a78bfa;
+            cursor: pointer;
+        }
+        a, #respuesta { color: #7dd3fc; }
+    </style>
+</head>
+<body>
+    <form id="formulario">
+        <h1>Formulario de contacto</h1>
+        <p>Completa los siguientes datos.</p>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" required>
+
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad"
+               min="1" max="120" required>
+
+        <button type="submit">Enviar información</button>
+
+        <p id="respuesta" role="status"></p>
+        <a href="index.html">Volver al inicio</a>
+    </form>
+
+    <script>
+        document.getElementById("formulario").addEventListener(
+            "submit", function(evento) {
+                evento.preventDefault();
+                const nombre = document.getElementById("nombre").value;
+                document.getElementById("respuesta").textContent =
+                    "¡Gracias, " + nombre +
+                    "! Los datos se validaron correctamente. " +
+                    "Este formulario es una demostración y no envía datos a un servidor.";
+                this.reset();
+            }
+        );
+    </script>
+</body>
+</html>

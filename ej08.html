@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño adaptable</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0c1020;
+            color: #f4f5ff;
+        }
+        header, footer {
+            padding: 25px;
+            text-align: center;
+            background: #151b30;
+        }
+        h1, h2 { color: #a78bfa; }
+        .contenedor {
+            max-width: 1000px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+        .tarjetas {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .tarjeta {
+            padding: 25px;
+            background: #202744;
+            border: 1px solid #a78bfa55;
+            border-radius: 15px;
+        }
+        p { color: #c3c9dd; }
+        a { color: #7dd3fc; }
+
+        @media (max-width: 800px) {
+            .tarjetas { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 520px) {
+            header, footer { padding: 18px 12px; }
+            .contenedor { padding: 20px 14px; }
+            .tarjetas { grid-template-columns: 1fr; }
+            .tarjeta { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mi mundo digital</h1>
+        <p>Una página que se adapta a tu pantalla.</p>
+    </header>
+
+    <main class="contenedor">
+        <h2>Mis intereses</h2>
+
+        <div class="tarjetas">
+            <article class="tarjeta">
+                <h3>Programación</h3>
+                <p>Crear páginas y soluciones digitales.</p>
+            </article>
+
+            <article class="tarjeta">
+                <h3>Creatividad</h3>
+                <p>Explorar ideas y diseños diferentes.</p>
+            </article>
+
+            <article class="tarjeta">
+                <h3>Tecnología</h3>
+                <p>Descubrir nuevas herramientas digitales.</p>
+            </article>
+        </div>
+
+        <p><a href="index.html">Volver al inicio</a></p>
+    </main>
+
+    <footer>
+        Mi espacio personal · 2026
+    </footer>
+</body>
+</html>

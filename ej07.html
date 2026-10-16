@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi navegación</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0c1020;
+            color: #f4f5ff;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 20px;
+            background: #151b30;
+            border-bottom: 1px solid #a78bfa;
+        }
+        nav a {
+            padding: 10px 14px;
+            border-radius: 8px;
+            color: #d8d8ee;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        nav a:hover { background: #292448; color: #7dd3fc; }
+        nav a:active { color: #f9a8d4; }
+        nav a:focus { outline: 2px solid #a78bfa; }
+        main { max-width: 800px; margin: 50px auto; padding: 20px; }
+        section {
+            padding: 25px;
+            margin: 20px 0;
+            background: #151b30;
+            border-radius: 15px;
+            scroll-margin-top: 20px;
+        }
+        h1, h2 { color: #a78bfa; }
+    </style>
+</head>
+<body>
+    <nav aria-label="Menú de navegación">
+        <a href="#biografia">Sobre mí</a>
+        <a href="#estudios">Mis estudios</a>
+        <a href="#metas">Mis metas</a>
+        <a href="https://www.instagram.com/"
+           target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+        <a href="https://www.tiktok.com/"
+           target="_blank" rel="noopener noreferrer">TikTok ↗</a>
+    </nav>
+
+    <main>
+        <h1>Mi espacio personal</h1>
+
+        <section id="biografia">
+            <h2>Sobre mí</h2>
+            <p>Soy Gianella Solorzano y me gusta aprender cosas nuevas.</p>
+        </section>
+
+        <section id="estudios">
+            <h2>Mis estudios</h2>
+            <p>Estudio Ingeniería en Sistemas Inteligentes.</p>
+        </section>
+
+        <section id="metas">
+            <h2>Mis metas</h2>
+            <p>Quiero mejorar mis habilidades de programación y diseño.</p>
+        </section>
+
+        <a href="index.html" style="color:#7dd3fc">Volver al inicio</a>
+    </main>
+</body>
+</html>

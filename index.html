@@ -1,0 +1,1040 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conoce un poco más sobre Gianella, sus intereses y su pasión por la tecnología.">
+
+    <title>Gianella | Mi espacio personal</title>
+
+    <style>
+        /* CONFIGURACIÓN GENERAL */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --fondo: #0c1020;
+            --panel: #151b30;
+            --panel-claro: #1c2440;
+            --morado: #a78bfa;
+            --azul: #7dd3fc;
+            --texto: #f4f5ff;
+            --texto-suave: #b7bfd5;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: var(--fondo);
+            color: var(--texto);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .contenedor {
+            width: min(1100px, 90%);
+            margin: auto;
+        }
+
+        .seccion {
+            padding: 85px 0;
+        }
+
+        .etiqueta {
+            color: var(--azul);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .titulo-seccion {
+            font-size: clamp(1.8rem, 4vw, 2.7rem);
+            line-height: 1.2;
+            margin: 12px 0 18px;
+        }
+
+        .descripcion {
+            color: var(--texto-suave);
+            max-width: 650px;
+        }
+
+        /* ENCABEZADO Y NAVEGACIÓN */
+        .encabezado {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(12, 16, 32, 0.94);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid #ffffff12;
+        }
+
+        .barra {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--morado);
+        }
+
+        .navegacion {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+
+        .navegacion a {
+            color: var(--texto-suave);
+            font-size: 0.9rem;
+            transition: color 0.25s;
+        }
+
+        .navegacion a:hover,
+        .navegacion a:focus,
+        .navegacion a:active {
+            color: var(--azul);
+        }
+
+        /* PRESENTACIÓN */
+        .inicio {
+            min-height: 540px;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            gap: 55px;
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+
+        .inicio h1 {
+            font-size: clamp(2.8rem, 6vw, 4.8rem);
+            line-height: 1.08;
+            margin: 20px 0;
+            letter-spacing: -2px;
+        }
+
+        .inicio h1 span {
+            color: var(--morado);
+        }
+
+        .inicio p {
+            color: var(--texto-suave);
+            max-width: 520px;
+            margin-bottom: 28px;
+        }
+
+        .boton {
+            display: inline-block;
+            padding: 12px 23px;
+            border-radius: 9px;
+            background: var(--morado);
+            color: #15102b;
+            font-weight: bold;
+            border: 1px solid var(--morado);
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .boton:hover {
+            background: transparent;
+            color: var(--texto);
+            transform: translateY(-2px);
+        }
+
+        .visual {
+            min-height: 340px;
+            border-radius: 30px;
+            border: 1px solid #a78bfa50;
+            background:
+                radial-gradient(circle at 50% 35%, #a78bfa55, transparent 36%),
+                linear-gradient(145deg, #202d51, #171329 70%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+            box-shadow: 0 25px 80px #00000035;
+        }
+
+        .icono-principal {
+            font-size: 6rem;
+            margin-bottom: 12px;
+            filter: drop-shadow(0 0 25px #a78bfa60);
+        }
+
+        .visual h2 {
+            font-size: 1.5rem;
+        }
+
+        .visual p {
+            margin: 5px 0 0;
+        }
+
+        /* SOBRE MÍ Y BARRA LATERAL */
+        .sobre {
+            background: #11162a;
+        }
+
+        .columnas {
+            display: grid;
+            grid-template-columns: 1.5fr 0.8fr;
+            gap: 25px;
+            align-items: start;
+        }
+
+        .tarjeta {
+            background: var(--panel);
+            border: 1px solid #ffffff12;
+            border-radius: 18px;
+            padding: 28px;
+        }
+
+        .tarjeta h3 {
+            margin-bottom: 12px;
+        }
+
+        .tarjeta p {
+            color: var(--texto-suave);
+        }
+
+        .lista {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .lista li {
+            padding: 9px 0;
+            border-bottom: 1px solid #ffffff12;
+        }
+
+        .lista li:last-child {
+            border-bottom: none;
+        }
+
+        .lista li::before {
+            content: "✦";
+            color: var(--morado);
+            margin-right: 10px;
+        }
+
+        /* PASATIEMPOS */
+        .rejilla-pasatiempos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 35px;
+        }
+
+        .pasatiempo {
+            background: var(--panel);
+            padding: 28px;
+            border: 1px solid #ffffff12;
+            border-radius: 18px;
+            transition: transform 0.25s, border-color 0.25s;
+        }
+
+        .pasatiempo:hover {
+            transform: translateY(-6px);
+            border-color: var(--morado);
+        }
+
+        .pasatiempo .icono {
+            font-size: 2.3rem;
+        }
+
+        .pasatiempo h3 {
+            margin: 12px 0 7px;
+        }
+
+        .pasatiempo p {
+            color: var(--texto-suave);
+            font-size: 0.95rem;
+        }
+
+        /* CAJA INTERACTIVA Y SLIDER */
+        .experiencia {
+            background: linear-gradient(130deg, #222044, #13263c);
+            border: 1px solid #a78bfa65;
+            border-radius: 22px;
+            padding: 35px;
+            margin-top: 35px;
+            text-align: center;
+        }
+
+        .experiencia h3 {
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+        }
+
+        .experiencia p {
+            color: var(--texto-suave);
+        }
+
+        .control-slider {
+            width: min(400px, 100%);
+            margin: 25px auto 8px;
+            accent-color: var(--morado);
+            cursor: pointer;
+        }
+
+        .valor-slider {
+            color: var(--azul);
+            font-weight: bold;
+        }
+
+        /* TABLA */
+        .tabla-contenedor {
+            overflow-x: auto;
+            margin-top: 28px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--panel);
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid #ffffff12;
+        }
+
+        th {
+            background: #292448;
+            color: var(--azul);
+        }
+
+        tbody tr:hover {
+            background: var(--panel-claro);
+        }
+
+        /* GALERÍA */
+        .galeria {
+            background: #11162a;
+        }
+
+        .rejilla-galeria {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 35px;
+        }
+
+        .foto {
+            border: 1px solid #ffffff15;
+            border-radius: 17px;
+            overflow: hidden;
+            background: var(--panel);
+            cursor: pointer;
+            text-align: left;
+            color: var(--texto);
+            font: inherit;
+            padding: 0;
+        }
+
+        .foto img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.35s;
+        }
+
+        .foto:hover img {
+            transform: scale(1.06);
+        }
+
+        .foto span {
+            display: block;
+            padding: 14px;
+            font-weight: 600;
+        }
+
+        /* VENTANA EMERGENTE */
+        .modal {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            background: #050711ed;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+        }
+
+        .modal.abierto {
+            display: flex;
+        }
+
+        .modal-contenido {
+            max-width: 850px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .modal-contenido img {
+            max-height: 75vh;
+            width: 100%;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+
+        .modal-contenido p {
+            margin-top: 12px;
+        }
+
+        .cerrar-modal {
+            position: absolute;
+            top: 20px;
+            right: 28px;
+            background: transparent;
+            color: white;
+            border: 0;
+            font-size: 2.5rem;
+            cursor: pointer;
+        }
+
+        /* FORMULARIO */
+        .formulario {
+            max-width: 700px;
+            margin-top: 30px;
+        }
+
+        .campos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .campo {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            margin-bottom: 20px;
+        }
+
+        .campo-completo {
+            grid-column: 1 / -1;
+        }
+
+        .campo label {
+            color: var(--texto-suave);
+            font-size: 0.9rem;
+        }
+
+        .campo input,
+        .campo textarea {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #ffffff25;
+            border-radius: 9px;
+            background: var(--panel);
+            color: white;
+            font: inherit;
+        }
+
+        .campo input:focus,
+        .campo textarea:focus {
+            outline: 2px solid var(--morado);
+            border-color: transparent;
+        }
+
+        .mensaje-formulario {
+            margin-top: 15px;
+            color: var(--azul);
+        }
+
+        /* PIE DE PÁGINA */
+        .pie {
+            padding: 30px 0;
+            border-top: 1px solid #ffffff15;
+            color: var(--texto-suave);
+            text-align: center;
+        }
+
+        .redes {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 22px;
+            margin: 12px 0;
+        }
+
+        .redes a:hover {
+            color: var(--azul);
+        }
+
+        /* DISEÑO RESPONSIVO */
+        @media (max-width: 800px) {
+            .barra {
+                padding: 16px 0;
+                flex-direction: column;
+            }
+
+            .navegacion {
+                justify-content: center;
+                gap: 12px 18px;
+            }
+
+            .inicio {
+                grid-template-columns: 1fr;
+                gap: 35px;
+                padding-top: 55px;
+            }
+
+            .visual {
+                min-height: 270px;
+            }
+
+            .columnas {
+                grid-template-columns: 1fr;
+            }
+
+            .rejilla-pasatiempos,
+            .rejilla-galeria {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 520px) {
+            .seccion {
+                padding: 60px 0;
+            }
+
+            .inicio h1 {
+                font-size: 2.8rem;
+            }
+
+            .rejilla-pasatiempos,
+            .rejilla-galeria {
+                grid-template-columns: 1fr;
+            }
+
+            .campos {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .experiencia,
+            .tarjeta {
+                padding: 22px;
+            }
+
+            th, td {
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado">
+        <div class="contenedor barra">
+            <a href="#inicio" class="logo">GIA<span>NELLA.</span></a>
+
+            <nav class="navegacion" aria-label="Navegación principal">
+                <a href="#inicio">Inicio</a>
+                <a href="#sobre-mi">Sobre mí</a>
+                <a href="#intereses">Intereses</a>
+                <a href="#inspiracion">Inspiración</a>
+                <a href="#galeria">Galería</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- PRESENTACIÓN -->
+        <section class="contenedor inicio" id="inicio">
+            <div>
+                <span class="etiqueta">Mi espacio personal</span>
+
+                <h1>Hola, soy <span>Gianella.</span></h1>
+
+                <p>
+                    Soy estudiante de Ingeniería en Sistemas Inteligentes.
+                    Me gusta aprender cosas nuevas, explorar la tecnología
+                    y descubrir nuevas formas de expresar mi creatividad.
+                </p>
+
+                <a href="#sobre-mi" class="boton">Conóceme un poco más ↗</a>
+            </div>
+
+            <div class="visual">
+                <div class="icono-principal">✦</div>
+                <h2>Ideas que se convierten en proyectos</h2>
+                <p>Creatividad · Tecnología · Aprendizaje</p>
+            </div>
+        </section>
+
+        <!-- BIOGRAFÍA Y BARRA LATERAL -->
+        <section class="seccion sobre" id="sobre-mi">
+            <div class="contenedor">
+                <span class="etiqueta">Un poco sobre mí</span>
+                <h2 class="titulo-seccion">Conociendo mi mundo</h2>
+
+                <div class="columnas">
+                    <article class="tarjeta">
+                        <h3>Mi historia</h3>
+
+                        <p>
+                            Mi nombre es Gianella Solorzano y soy estudiante
+                            de Ingeniería en Sistemas Inteligentes. Me interesa
+                            conocer cómo funciona la tecnología y cómo podemos
+                            utilizarla para crear soluciones útiles.
+                        </p>
+
+                        <p style="margin-top: 14px;">
+                            Durante mi formación quiero desarrollar mis
+                            habilidades, aprender nuevos lenguajes de
+                            programación y participar en proyectos que
+                            combinen innovación y creatividad.
+                        </p>
+
+                        <p style="margin-top: 14px;">
+                            También disfruto dedicar tiempo a mis intereses
+                            personales, porque considero que cada experiencia
+                            es una oportunidad para aprender algo diferente.
+                        </p>
+                    </article>
+
+                    <aside class="tarjeta">
+                        <h3>Lo que me caracteriza</h3>
+
+                        <ul class="lista">
+                            <li>Curiosidad por aprender</li>
+                            <li>Creatividad para proponer ideas</li>
+                            <li>Interés por la tecnología</li>
+                            <li>Responsabilidad con mis proyectos</li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- PASATIEMPOS -->
+        <section class="seccion" id="intereses">
+            <div class="contenedor">
+                <span class="etiqueta">Tiempo para mí</span>
+                <h2 class="titulo-seccion">Cosas que disfruto</h2>
+
+                <p class="descripcion">
+                    Estos son algunos de los intereses que forman parte
+                    de mi día a día y me ayudan a mantener la creatividad.
+                </p>
+
+                <div class="rejilla-pasatiempos">
+                    <article class="pasatiempo">
+                        <div class="icono">💻</div>
+                        <h3>Explorar tecnología</h3>
+                        <p>
+                            Aprender sobre programación, páginas web y
+                            herramientas digitales para crear proyectos.
+                        </p>
+                    </article>
+
+                    <article class="pasatiempo">
+                        <div class="icono">🎨</div>
+                        <h3>Diseño y creatividad</h3>
+                        <p>
+                            Experimentar con colores, diseños e ideas
+                            para expresar mi imaginación.
+                        </p>
+                    </article>
+
+                    <article class="pasatiempo">
+                        <div class="icono">🎵</div>
+                        <h3>Escuchar música</h3>
+                        <p>
+                            Disfrutar de diferentes melodías mientras
+                            estudio, descanso o trabajo en mis ideas.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAJA INTERACTIVA Y SLIDER -->
+        <section class="seccion" id="inspiracion">
+            <div class="contenedor">
+                <span class="etiqueta">Un espacio para imaginar</span>
+                <h2 class="titulo-seccion">Mi rincón creativo</h2>
+
+                <p class="descripcion">
+                    Mueve el control para cambiar la intensidad de la luz
+                    de este pequeño espacio digital.
+                </p>
+
+                <div class="experiencia" id="caja-creativa">
+                    <h3>✨ Todo comienza con una idea</h3>
+
+                    <p>
+                        La creatividad nos permite imaginar posibilidades
+                        y convertirlas poco a poco en realidad.
+                    </p>
+
+                    <label for="intensidad">Intensidad de la luz</label>
+
+                    <br>
+
+                    <input
+                        class="control-slider"
+                        type="range"
+                        id="intensidad"
+                        min="10"
+                        max="100"
+                        value="60"
+                    >
+
+                    <p>
+                        Nivel de iluminación:
+                        <span class="valor-slider" id="valor-luz">60%</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TABLA DE PAÍSES -->
+        <section class="seccion sobre" id="lugares">
+            <div class="contenedor">
+                <span class="etiqueta">Conociendo el mundo</span>
+                <h2 class="titulo-seccion">Lugares que me gustaría conocer</h2>
+
+                <p class="descripcion">
+                    Cada país tiene su propia cultura, historia y lugares
+                    interesantes por descubrir.
+                </p>
+
+                <div class="tabla-contenedor">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>País</th>
+                                <th>Capital</th>
+                                <th>Continente</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Ecuador</td>
+                                <td>Quito</td>
+                                <td>América del Sur</td>
+                            </tr>
+
+                            <tr>
+                                <td>Japón</td>
+                                <td>Tokio</td>
+                                <td>Asia</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERÍA -->
+        <section class="seccion galeria" id="galeria">
+            <div class="contenedor">
+                <span class="etiqueta">Pequeños momentos</span>
+                <h2 class="titulo-seccion">Mi galería de inspiración</h2>
+
+                <p class="descripcion">
+                    Una colección de imágenes relacionadas con mis
+                    intereses. Haz clic en cualquiera para verla ampliada.
+                </p>
+
+                <div class="rejilla-galeria">
+                    <button
+                        type="button"
+                        class="foto"
+                        data-imagen="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85"
+                        data-titulo="Tecnología e innovación"
+                        aria-label="Ampliar imagen de tecnología"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80"
+                            alt="Componentes electrónicos y tecnología"
+                            loading="lazy"
+                        >
+                        <span>Tecnología e innovación ↗</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="foto"
+                        data-imagen="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=85"
+                        data-titulo="Creatividad e ideas"
+                        aria-label="Ampliar imagen de creatividad"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80"
+                            alt="Cuaderno y materiales para escribir"
+                            loading="lazy"
+                        >
+                        <span>Creatividad e ideas ↗</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="foto"
+                        data-imagen="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1200&q=85"
+                        data-titulo="Mi pasión por la música"
+                        aria-label="Ampliar imagen de música"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=600&q=80"
+                            alt="Equipo e instrumentos musicales"
+                            loading="lazy"
+                        >
+                        <span>Mi pasión por la música ↗</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORMULARIO -->
+        <section class="seccion" id="contacto">
+            <div class="contenedor">
+                <span class="etiqueta">Hablemos</span>
+                <h2 class="titulo-seccion">Un espacio para conectar</h2>
+
+                <p class="descripcion">
+                    Completa el formulario de demostración para probar
+                    cómo funciona.
+                </p>
+
+                <form class="formulario" id="formulario">
+                    <div class="campos">
+                        <div class="campo">
+                            <label for="nombre">Nombre completo</label>
+                            <input
+                                type="text"
+                                id="nombre"
+                                name="nombre"
+                                placeholder="Escribe tu nombre"
+                                required
+                            >
+                        </div>
+
+                        <div class="campo">
+                            <label for="correo">Correo electrónico</label>
+                            <input
+                                type="email"
+                                id="correo"
+                                name="correo"
+                                placeholder="ejemplo@correo.com"
+                                required
+                            >
+                        </div>
+
+                        <div class="campo">
+                            <label for="edad">Edad</label>
+                            <input
+                                type="number"
+                                id="edad"
+                                name="edad"
+                                placeholder="Tu edad"
+                                min="1"
+                                max="120"
+                                required
+                            >
+                        </div>
+
+                        <div class="campo">
+                            <label for="tema">Tema de interés</label>
+                            <input
+                                type="text"
+                                id="tema"
+                                name="tema"
+                                placeholder="¿Qué te gustaría compartir?"
+                            >
+                        </div>
+
+                        <div class="campo campo-completo">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea
+                                id="mensaje"
+                                name="mensaje"
+                                rows="4"
+                                placeholder="Escribe un mensaje..."
+                            ></textarea>
+                        </div>
+                    </div>
+
+                    <button class="boton" type="submit">
+                        Enviar formulario ↗
+                    </button>
+
+                    <p
+                        class="mensaje-formulario"
+                        id="respuesta-formulario"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie">
+        <div class="contenedor">
+            <a href="#inicio" class="logo">GIA<span>NELLA.</span></a>
+
+            <p>Aprendiendo, creando y construyendo nuevas ideas.</p>
+
+            <div class="redes">
+                <!-- Cambia estos enlaces por tus perfiles reales -->
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                    Instagram ↗
+                </a>
+
+                <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">
+                    TikTok ↗
+                </a>
+
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                    Facebook ↗
+                </a>
+            </div>
+
+            <p>© 2026 Gianella · Mi espacio personal</p>
+        </div>
+    </footer>
+
+    <!-- VENTANA EMERGENTE DE LA GALERÍA -->
+    <div
+        class="modal"
+        id="modal-galeria"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Imagen ampliada"
+        aria-hidden="true"
+    >
+        <button
+            type="button"
+            class="cerrar-modal"
+            id="cerrar-modal"
+            aria-label="Cerrar imagen"
+        >&times;</button>
+
+        <div class="modal-contenido">
+            <img id="imagen-ampliada" src="" alt="">
+            <p id="titulo-ampliado"></p>
+        </div>
+    </div>
+
+    <script>
+        // SLIDER: CAMBIAR LA ILUMINACIÓN DE LA CAJA
+        const slider = document.getElementById("intensidad");
+        const valorLuz = document.getElementById("valor-luz");
+        const cajaCreativa = document.getElementById("caja-creativa");
+
+        function actualizarLuz() {
+            const valor = Number(slider.value);
+
+            valorLuz.textContent = valor + "%";
+
+            cajaCreativa.style.boxShadow =
+                `0 0 ${valor}px rgba(167, 139, 250, ${valor / 250})`;
+        }
+
+        slider.addEventListener("input", actualizarLuz);
+        actualizarLuz();
+
+        // GALERÍA: ABRIR Y CERRAR LA VENTANA EMERGENTE
+        const modal = document.getElementById("modal-galeria");
+        const imagenAmpliada = document.getElementById("imagen-ampliada");
+        const tituloAmpliado = document.getElementById("titulo-ampliado");
+        const cerrarModal = document.getElementById("cerrar-modal");
+
+        document.querySelectorAll(".foto").forEach(function(boton) {
+            boton.addEventListener("click", function() {
+                imagenAmpliada.src = boton.dataset.imagen;
+                imagenAmpliada.alt = boton.dataset.titulo;
+                tituloAmpliado.textContent = boton.dataset.titulo;
+
+                modal.classList.add("abierto");
+                modal.setAttribute("aria-hidden", "false");
+                cerrarModal.focus();
+            });
+        });
+
+        function cerrarGaleria() {
+            modal.classList.remove("abierto");
+            modal.setAttribute("aria-hidden", "true");
+            imagenAmpliada.src = "";
+        }
+
+        cerrarModal.addEventListener("click", cerrarGaleria);
+
+        modal.addEventListener("click", function(evento) {
+            if (evento.target === modal) {
+                cerrarGaleria();
+            }
+        });
+
+        document.addEventListener("keydown", function(evento) {
+            if (evento.key === "Escape" && modal.classList.contains("abierto")) {
+                cerrarGaleria();
+            }
+        });
+
+        // FORMULARIO: VALIDAR Y MOSTRAR UNA CONFIRMACIÓN
+        const formulario = document.getElementById("formulario");
+        const respuestaFormulario =
+            document.getElementById("respuesta-formulario");
+
+        formulario.addEventListener("submit", function(evento) {
+            evento.preventDefault();
+
+            const nombre = document.getElementById("nombre").value.trim();
+
+            respuestaFormulario.textContent =
+                "¡Gracias, " + nombre +
+                "! El formulario se completó correctamente. " +
+                "Esta es una demostración: los datos no se han enviado a un servidor.";
+
+            formulario.reset();
+        });
+    </script>
+
+</body>
+</html>

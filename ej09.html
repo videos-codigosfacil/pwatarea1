@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi galería</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 35px 20px;
+            font-family: Arial, sans-serif;
+            background: #0c1020;
+            color: #f4f5ff;
+        }
+        main { max-width: 1000px; margin: auto; }
+        h1 { color: #a78bfa; }
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin: 30px 0;
+        }
+        .foto {
+            padding: 0;
+            background: #151b30;
+            color: white;
+            border: 1px solid #a78bfa55;
+            border-radius: 14px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .foto img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .foto span { display: block; padding: 14px; }
+        .foto:hover { outline: 2px solid #a78bfa; }
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 5;
+            padding: 25px;
+            background: #050711ee;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal.abierto { display: flex; }
+        .modal img {
+            max-width: 90%;
+            max-height: 75vh;
+            object-fit: contain;
+        }
+        .cerrar {
+            position: absolute;
+            right: 25px;
+            top: 10px;
+            color: white;
+            background: transparent;
+            border: 0;
+            font-size: 40px;
+            cursor: pointer;
+        }
+        a { color: #7dd3fc; }
+        @media (max-width: 650px) {
+            .galeria { grid-template-columns: 1fr; }
+            .foto img { height: 240px; }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Mi galería de inspiración</h1>
+        <p>Haz clic en una imagen para verla ampliada.</p>
+
+        <div class="galeria">
+            <button class="foto" type="button"
+                data-img="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85"
+                data-titulo="Tecnología">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80"
+                     alt="Componentes electrónicos">
+                <span>Tecnología</span>
+            </button>
+
+            <button class="foto" type="button"
+                data-img="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=85"
+                data-titulo="Creatividad">
+                <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80"
+                     alt="Cuaderno para escribir">
+                <span>Creatividad</span>
+            </button>
+
+            <button class="foto" type="button"
+                data-img="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1200&q=85"
+                data-titulo="Música">
+                <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=600&q=80"
+                     alt="Equipo musical">
+                <span>Música</span>
+            </button>
+        </div>
+
+        <a href="index.html">Volver al inicio</a>
+    </main>
+
+    <div class="modal" id="modal" role="dialog"
+         aria-modal="true" aria-hidden="true" aria-label="Imagen ampliada">
+        <button class="cerrar" id="cerrar" type="button"
+                aria-label="Cerrar imagen">&times;</button>
+        <div>
+            <img id="ampliada" src="" alt="">
+            <p id="titulo"></p>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("modal");
+        const ampliada = document.getElementById("ampliada");
+        const titulo = document.getElementById("titulo");
+        const cerrar = document.getElementById("cerrar");
+
+        document.querySelectorAll(".foto").forEach(function(foto) {
+            foto.addEventListener("click", function() {
+                ampliada.src = foto.dataset.img;
+                ampliada.alt = foto.dataset.titulo;
+                titulo.textContent = foto.dataset.titulo;
+                modal.classList.add("abierto");
+                modal.setAttribute("aria-hidden", "false");
+                cerrar.focus();
+            });
+        });
+
+        function cerrarGaleria() {
+            modal.classList.remove("abierto");
+            modal.setAttribute("aria-hidden", "true");
+            ampliada.src = "";
+        }
+
+        cerrar.addEventListener("click", cerrarGaleria);
+
+        modal.addEventListener("click", function(evento) {
+            if (evento.target === modal) cerrarGaleria();
+        });
+
+        document.addEventListener("keydown", function(evento) {
+            if (evento.key === "Escape") cerrarGaleria();
+        });
+    </script>
+</body>
+</html>

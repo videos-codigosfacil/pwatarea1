@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi espacio personal</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0c1020;
+            color: #f4f5ff;
+            line-height: 1.7;
+        }
+        header {
+            padding: 35px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #292448, #15304a);
+        }
+        header h1 { color: #c4b5fd; }
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 22px;
+            padding: 16px;
+            background: #151b30;
+        }
+        nav a, footer a { color: #7dd3fc; }
+        nav a:hover, footer a:hover { color: #c4b5fd; }
+        .distribucion {
+            max-width: 1100px;
+            margin: 35px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+            align-items: start;
+        }
+        article, aside {
+            padding: 25px;
+            background: #151b30;
+            border: 1px solid #ffffff15;
+            border-radius: 16px;
+        }
+        article h2, aside h2 { color: #a78bfa; }
+        aside li { margin: 12px 0; }
+        p { color: #c3c9dd; }
+        footer {
+            padding: 25px;
+            text-align: center;
+            background: #151b30;
+            border-top: 1px solid #a78bfa55;
+        }
+        @media (max-width: 700px) {
+            .distribucion { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mi espacio personal</h1>
+        <p>Conociendo un poco más sobre Gianella</p>
+    </header>
+
+    <nav aria-label="Navegación principal">
+        <a href="#presentacion">Presentación</a>
+        <a href="#formacion">Formación</a>
+        <a href="#intereses">Intereses</a>
+        <a href="#metas">Metas</a>
+    </nav>
+
+    <main class="distribucion">
+        <article>
+            <section id="presentacion">
+                <h2>Sobre mí</h2>
+                <p>
+                    Soy Gianella Solorzano, estudiante de Ingeniería en
+                    Sistemas Inteligentes. Me interesa la tecnología,
+                    la programación y el diseño de soluciones digitales.
+                </p>
+            </section>
+
+            <section id="formacion">
+                <h2>Mi formación</h2>
+                <p>
+                    Durante mis estudios busco adquirir conocimientos
+                    que me permitan comprender cómo se desarrollan
+                    los sistemas y las aplicaciones informáticas.
+                </p>
+            </section>
+
+            <section id="intereses">
+                <h2>Mis intereses</h2>
+                <p>
+                    Disfruto explorar herramientas digitales, escuchar
+                    música y desarrollar ideas creativas que pueda
+                    transformar en proyectos.
+                </p>
+            </section>
+
+            <section id="metas">
+                <h2>Mis metas</h2>
+                <p>
+                    Quiero fortalecer mis habilidades de programación,
+                    aprender nuevas tecnologías y participar en proyectos
+                    que resuelvan problemas de la vida cotidiana.
+                </p>
+            </section>
+        </article>
+
+        <aside>
+            <h2>Mis prioridades</h2>
+            <ul>
+                <li>Aprender continuamente.</li>
+                <li>Desarrollar mi creatividad.</li>
+                <li>Mejorar mis proyectos.</li>
+                <li>Utilizar la tecnología responsablemente.</li>
+            </ul>
+
+            <h2>Mi frase favorita</h2>
+            <p>
+                Cada nuevo conocimiento es una oportunidad
+                para construir algo diferente.
+            </p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>© 2026 Gianella · Mi espacio personal</p>
+        <a href="index.html">Regresar a la página principal</a>
+    </footer>
+</body>
+</html>
